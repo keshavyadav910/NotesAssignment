@@ -1,0 +1,31 @@
+
+
+<div  ng-controller="notesController" class="container" >
+<div class="row">
+    <div class="col-sm-4" style="border-right: 1px dashed gray;">
+        <div ng-repeat="card in cards" class="card">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{card.title}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{card.body}}</h6>
+                  <input type="button"  class="btn btn-secondary btn-sm active" role="button" aria-pressed="true"  value="X" ng-click="cards.splice($index,1)"/> 
+                </div>
+              </div>
+        
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Title</label>
+            <input type="text" class="form-control" name="title" ng-model="newNote.title"/>    
+        </div>
+        <div class="form-group">
+            <label>Body</label>
+            <textarea class="form-control" ng-model="newNote.body" rows="3"></textarea>  
+        </div>
+        <input type="button" class="btn btn-primary col-sm-offset-3"  value="Save" ng-click="saveRecord()"/>     
+    </div>
+</div>
+    
+
+</div>
